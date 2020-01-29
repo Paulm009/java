@@ -1,0 +1,20 @@
+import java.util.*;
+public class EJER17
+{
+    public int  iguales(String cadena,char x)
+    {
+       return iguales(cadena,0,x);       
+    }
+    public int iguales(String cadena,int pos, char x)
+    {
+        char cad;
+        cad=cadena.charAt(pos);
+        if(pos==cadena.length()){
+            return 0;
+        }else if(x==cad){
+              return 1+iguales(cadena,pos+1,x);
+            }
+         return 0;
+        }
+        
+    }
