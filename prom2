@@ -1,0 +1,52 @@
+public class TematicoEjer2
+{
+   
+   /*  public int [] array(int num )
+    {
+        return array [](num,array,0,1);
+    }*/
+    public static void main(String[] args) {
+        int num=1234321;
+        int array[]={0};
+        int res=0;
+        int i=1;
+        int j=1;
+        int k=0;
+        int con1=0;
+        int con2=0;
+        boolean resp=false;
+        array(num,array, res, i);
+        tematico(num,array,j, k,con1, con2,res,i,resp);
+    }
+    
+    private static int [] array(int num,int [] array,int res,int i )
+    {
+        if(num%10>0){
+            res=num%10;
+            array[i]=res;
+            array= array(num%10,array, res, i +1);
+            }
+            return array;
+  }
+  private static boolean tematico(int num,int []array,int j,int  k,int con1,int con2,int res,int i ,boolean resp){
+     int dis=array(num, array,res,i ).length;
+     k=((array(num, array,res,i ).length)/2)+1;
+         if((array(num, array,res,i ).length)/2>j){
+            con1=con1+(array[j]+array[j+1]);
+            return tematico(num,array,j+2, k,con1, con2,res,i,resp);
+            }
+            if((array(num, array,res,i ).length)>k){
+            con2=con2+(array[k]+array[k+1]);
+            return tematico(num,array,j, k+2,con1, con2,res,i,resp);
+            
+         }
+         if(con1==con2){
+            
+            resp=true;
+            }else{
+            resp = false;
+            }
+            return resp;
+    }
+}
+    
